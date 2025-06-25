@@ -1,4 +1,4 @@
-#!/bin/bash
+qr#!/bin/bash
 # Script tự động cài đặt Termux và tải file tdm3.py, sn01.py
 
 # Định nghĩa màu sắc
@@ -33,7 +33,7 @@ clear
 
 # Hiển thị tiêu đề trong khung đẹp với Developed by xuống dưới
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}                        │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUp   v2.1 ★${BOLD}                             │${NC}"
 echo -e "${CYAN}│ ${BOLD}★ Developed by Đặng Gia ★${BOLD}                                │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
 echo ""
@@ -76,7 +76,7 @@ echo ""
 # Màn hình hoàn thành với banner
 clear
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}                        │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP v2.1 ★${BOLD}                               │${NC}"
 echo -e "${CYAN}│ ${BOLD}★ Developed by Đặng Gia ★${BOLD}                                │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
 echo -e "${CYAN} ╒════════════════════════════════════════════╕${NC}"
