@@ -9,18 +9,17 @@ CYAN='\033[0;36m'
 BOLD='\033[1m'
 NC='\033[0m' # No Color
 
-# Hàm hiển thị thanh tiến trình
+# Hàm hiển thị thanh tiến trình (một dòng)
 show_progress() {
-    local progress=$1
-    local total=$2
-    local message=$3
-    local percent=$((progress * 100 / total))
+    local total=$1
+    local message=$2
+    local percent=$3
     local filled=$((percent / 4))
     local empty=$((25 - filled))
     local bar=""
     for ((i=0; i<filled; i++)); do bar="${bar}█"; done
     for ((i=0; i<empty; i++)); do bar="${bar} "; done
-    echo -ne "\r${YELLOW}[📥] ${message}: [${GREEN}${bar}${NC}] ${CYAN}${percent}%${NC}"
+    echo -e "\r${YELLOW}[📥] ${message}: [${GREEN}${bar}${NC}] ${CYAN}${percent}%${NC}"
 }
 
 # Hàm hiển thị hiệu ứng loading
@@ -43,35 +42,41 @@ echo ""
 
 # Cập nhật và nâng cấp Termux
 show_loading "Khởi động cập nhật Termux"
-for i in {1..20}; do show_progress $i 20 "Cập nhật Termux"; sleep 0.5; done
-pkg update && pkg upgrade -y && echo -e "\n${GREEN}[✅] Cập nhật Termux hoàn tất!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi cập nhật Termux!${NC}"; exit 1; }
+yes | pkg update && yes | pkg upgrade -y
+show_progress 20 "Cập nhật Termux" 100
+echo -e "\n${GREEN}[✅] Cập nhật Termux hoàn tất!${NC}"
 echo ""
 
 # Cấp quyền truy cập bộ nhớ
 show_loading "Khởi động cấp quyền lưu trữ"
-for i in {1..10}; do show_progress $i 10 "Cấp quyền lưu trữ"; sleep 0.3; done
-echo "y" | termux-setup-storage && echo -e "\n${GREEN}[✅] Cấp quyền lưu trữ hoàn tất!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi cấp quyền lưu trữ!${NC}"; exit 1; }
+echo "y" | termux-setup-storage
+show_progress 10 "Cấp quyền lưu trữ" 100
+echo -e "\n${GREEN}[✅] Cấp quyền lưu trữ hoàn tất!${NC}"
 echo ""
 
-# khách hàng cài đặt các gói cần thiết
+# Cài đặt các gói cần thiết
 show_loading "Khởi động cài đặt gói"
-for i in {1..30}; do show_progress $i 30 "Cài đặt gói"; sleep 0.5; done
-pkg install python tsu libexpat openssl -y && echo -e "\n${GREEN}[✅] Cài đặt gói hoàn tất!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi cài đặt gói!${NC}"; exit 1; }
+yes | pkg install python tsu libexpat openssl -y
+show_progress 30 "Cài đặt gói" 100
+echo -e "\n${GREEN}[✅] Cài đặt gói hoàn tất!${NC}"
 echo ""
 
 # Cài đặt các thư viện Python
 show_loading "Khởi động cài đặt thư viện Python"
-for i in {1..40}; do show_progress $i 40 "Cài đặt thư viện Python"; sleep 0.5; done
-pip install requests Flask colorama aiohttp psutil crypto pycryptodome prettytable loguru rich pytz tqdm pyjwt pystyle cloudscraper && echo -e "\n${GREEN}[✅] Cài đặt thư viện Python hoàn tất!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi cài đặt thư viện Python!${NC}"; exit 1; }
+pip install requests Flask colorama aiohttp psutil crypto pycryptodome prettytable loguru rich pytz tqdm pyjwt pystyle cloudscraper
+show_progress 40 "Cài đặt thư viện Python" 100
+echo -e "\n${GREEN}[✅] Cài đặt thư viện Python hoàn tất!${NC}"
 echo ""
 
 # Tải file về /sdcard/Download
 show_loading "Khởi động tải tdm3.py"
-for i in {1..10}; do show_progress $i 10 "Tải tdm3.py"; sleep 0.3; done
-curl -o /sdcard/Download/tdm3.py https://raw.githubusercontent.com/DangGia/termux-setup/main/tdm3.py && echo -e "\n${GREEN}[✅] Đã tải tdm3.py!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi tải tdm3.py!${NC}"; exit 1; }
+curl -o /sdcard/Download/tdm3.py https://raw.githubusercontent.com/Gia3010Q/termux-setup/main/tdm3.py
+show_progress 10 "Tải tdm3.py" 100
+echo -e "\n${GREEN}[✅] Đã tải tdm3.py!${NC}"
 show_loading "Khởi động tải sn01.py"
-for i in {1..10}; do show_progress $i 10 "Tải sn01.py"; sleep 0.3; done
-curl -o /sdcard/Download/sn01.py https://raw.githubusercontent.com/DangGia/termux-setup/main/sn01.py && echo -e "\n${GREEN}[✅] Đã tải sn01.py!${NC}" || { echo -e "\n${CYAN}[❌] Lỗi khi tải sn01.py!${NC}"; exit 1; }
+curl -o /sdcard/Download/sn01.py https://raw.githubusercontent.com/Gia3010Q/termux-setup/main/sn01.py
+show_progress 10 "Tải sn01.py" 100
+echo -e "\n${GREEN}[✅] Đã tải sn01.py!${NC}"
 echo ""
 
 # Thông báo hoàn thành
