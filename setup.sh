@@ -33,8 +33,8 @@ clear
 
 # Hiển thị tiêu đề trong khung đẹp với Developed by xuống dưới
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}     │${NC}"
-echo -e "${CYAN}│ ${BOLD}Developed by Gia3010Q${BOLD}                │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}                        │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ Developed by Đặng Gia ★${BOLD}                                │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
 echo ""
 
@@ -76,12 +76,12 @@ echo ""
 # Màn hình hoàn thành với banner
 clear
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}     │${NC}"
-echo -e "${CYAN}│ ${BOLD}Developed by Gia3010Q${BOLD}                │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ TERMUX AUTO SETUP SCRIPT v2.1 ★${BOLD}                        │${NC}"
+echo -e "${CYAN}│ ${BOLD}★ Developed by Đặng Gia ★${BOLD}                                │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
-echo -e "${CYAN}╒════════════════════════════════════════════╕${NC}"
-echo -e "${GREEN}│ ${BOLD}Setup Hoàn Tất Có Thể Sử Dụng Ngay${BOLD}    │${NC}"
-echo -e "${CYAN}╘════════════════════════════════════════════╛${NC}"
+echo -e "${CYAN} ╒════════════════════════════════════════════╕${NC}"
+echo -e "${GREEN}│ ${BOLD}Setup Hoàn Tất Có Thể Sử Dụng Ngay${BOLD}                        │${NC}"
+echo -e "${CYAN} ╘════════════════════════════════════════════╛${NC}"
 echo -e "${BLUE}📦 Khởi động tool với lệnh sau:${NC}"
 echo -e "${YELLOW}   ➜ cd /sdcard/Download && python sn01.py${NC}"
 echo -e "${YELLOW}   ➜ cd /sdcard/Download && python tdm3.py${NC}"
