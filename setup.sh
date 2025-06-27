@@ -33,7 +33,7 @@ clear
 
 # Hiển thị tiêu đề trong khung đẹp với Developed by xuống dưới
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}✨ TERMUX AUTO SETUP v2.1 ✨${BOLD}                │${NC}"
+echo -e "${CYAN}│ ${BOLD}✨ TERMUX AUTO SETUP      ✨${BOLD}                │${NC}"
 echo -e "${CYAN}│ ${BOLD}✨ Developed by Đặng Gia ✨${BOLD}                │${NC}"
 echo -e "${CYAN}│ ${BOLD}✨ Version 1.1 (Beta) ✨${BOLD}                   │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
@@ -77,7 +77,7 @@ echo ""
 # Màn hình hoàn thành với banner
 clear
 echo -e "${BLUE}╒════════════════════════════════════════════╕${NC}"
-echo -e "${CYAN}│ ${BOLD}✨ TERMUX AUTO SETUP v2.1 ✨${BOLD}                │${NC}"
+echo -e "${CYAN}│ ${BOLD}✨ TERMUX AUTO SETUP      ✨${BOLD}                │${NC}"
 echo -e "${CYAN}│ ${BOLD}✨ Developed by Đặng Gia ✨${BOLD}                │${NC}"
 echo -e "${CYAN}│ ${BOLD}✨ Version 1.1 (Beta) ✨${BOLD}                   │${NC}"
 echo -e "${BLUE}╘════════════════════════════════════════════╛${NC}"
