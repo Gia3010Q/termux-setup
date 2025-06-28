@@ -72,6 +72,10 @@ show_loading "Khởi động tải sn01.py"
 show_status "Tải sn01.py"
 curl -o /sdcard/Download/sn01.py https://raw.githubusercontent.com/Gia3010Q/termux-setup/main/sn01.py > /dev/null 2>&1
 echo -e "${GREEN}[✅] Đã tải sn01.py!${NC}"
+show_loading "Khởi động tải ld5.py"
+show_status "Tải ld5.py"
+curl -o /sdcard/Download/ld5.py https://raw.githubusercontent.com/Gia3010Q/termux-setup/refs/heads/main/ld5.py > /dev/null 2>&1
+echo -e "${GREEN}[✅] Đã tải ld5.py!${NC}"
 echo ""
 
 # Màn hình hoàn thành với banner
@@ -87,3 +91,4 @@ echo -e "${CYAN} ╘════════════════════
 echo -e "${BLUE}📦 Khởi động tool với lệnh sau:${NC}"
 echo -e "${YELLOW}   ➜ cd /sdcard/Download && python sn01.py${NC}"
 echo -e "${YELLOW}   ➜ cd /sdcard/Download && python tdm3.py${NC}"
+echo -e "${YELLOW}   ➜ cd /sdcard/Download && python ld5.py${NC}"
