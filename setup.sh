@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script tự động cài đặt Termux - Scode Premium Edition
+# Script tự động cài đặt Termux - Scode Auto Setup
 
 # Định nghĩa màu sắc nâng cao
 BLACK='\033[0;30m'
@@ -26,19 +26,19 @@ BG_MAGENTA='\033[45m'
 BG_CYAN='\033[46m'
 NC='\033[0m' # No Color
 
-# Hàm hiển thị banner Scode nhiều màu sắc
+# Hàm hiển thị banner Scode đồng bộ
 show_banner() {
     clear
-    echo -e "${BRIGHT_MAGENTA}╔══════════════════════════════════════════════════════════╗"
-    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_MAGENTA} ║"
-    echo -e "║${BRIGHT_CYAN} ██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_YELLOW}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_MAGENTA} ║"
-    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_MAGENTA} ║"
-    echo -e "║${BRIGHT_CYAN} ╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_MAGENTA} ║"
-    echo -e "║${BRIGHT_CYAN} ███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_YELLOW}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_MAGENTA} ║"
-    echo -e "║${BRIGHT_CYAN} ╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_MAGENTA} ║"
+    echo -e "${BRIGHT_BLUE}╔══════════════════════════════════════════════════════════╗"
+    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_BLUE} ║"
+    echo -e "║${BRIGHT_CYAN} ██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_YELLOW}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_BLUE} ║"
+    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_BLUE} ║"
+    echo -e "║${BRIGHT_CYAN} ╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_BLUE} ║"
+    echo -e "║${BRIGHT_CYAN} ███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_YELLOW}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_BLUE} ║"
+    echo -e "║${BRIGHT_CYAN} ╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_BLUE} ║"
     echo -e "╠══════════════════════════════════════════════════════════╣"
-    echo -e "║ ${BRIGHT_CYAN}🚀 TERMUX AUTO SETUP - ${BRIGHT_GREEN}SCODE PREMIUM ${BRIGHT_YELLOW}EDITION ${BRIGHT_MAGENTA}  ║"
-    echo -e "║ ${BRIGHT_BLUE}🔧 Developed by Đặng Gia - ${BRIGHT_YELLOW}Version 2.0 ${BRIGHT_MAGENTA}       ║"
+    echo -e "║ ${BRIGHT_YELLOW}🚀 Scode Auto Setup ${BRIGHT_BLUE}                                  ║"
+    echo -e "║ ${BRIGHT_MAGENTA}🔧 Developed by Đặng Gia - ${BRIGHT_GREEN}Version 2.0 ${BRIGHT_BLUE}         ║"
     echo -e "╚══════════════════════════════════════════════════════════╝${NC}"
     echo ""
 }
@@ -53,11 +53,11 @@ show_progress() {
     # Tạo thanh tiến trình với gradient màu xanh lá cây
     for i in {1..30}; do
         if [ $i -le 10 ]; then
-            color="${BRIGHT_BLACK}"
-        elif [ $i -le 20 ]; then
             color="${GREEN}"
-        else
+        elif [ $i -le 20 ]; then
             color="${BRIGHT_GREEN}"
+        else
+            color="${BG_GREEN}${BRIGHT_WHITE}"
         fi
         
         echo -ne "${color}▓${NC}"
@@ -154,19 +154,19 @@ check_error "Tải ld5.py thất bại"
 echo -e "${BRIGHT_GREEN}[✓] Tải ld5.py hoàn tất!${NC}"
 echo ""
 
-# Màn hình hoàn thành
+# Màn hình hoàn thành (sử dụng cùng banner với phần đầu)
 show_banner
 echo -e "${BRIGHT_GREEN}╔══════════════════════════════════════════════════════════╗"
 echo -e "║ ${BRIGHT_WHITE}${BG_GREEN}         🎉 CÀI ĐẶT THÀNH CÔNG - SẴN SÀNG SỬ DỤNG! ${NC}${BRIGHT_GREEN}       ║"
 echo -e "╠══════════════════════════════════════════════════════════╣"
-echo -e "║ ${BRIGHT_YELLOW}███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_CYAN} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_YELLOW}██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_CYAN}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_YELLOW}███████╗${BRIGHT_GREEN}██║     ${BRIGHT_CYAN}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_YELLOW}╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_CYAN}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_YELLOW}███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_CYAN}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_YELLOW}╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_CYAN}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_YELLOW}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}███████╗${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_YELLOW}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_GREEN} ║"
+echo -e "║ ${BRIGHT_CYAN}╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_GREEN} ║"
 echo -e "╠══════════════════════════════════════════════════════════╣"
-echo -e "║ ${BRIGHT_CYAN}🚀 Scode Auto Setup - ${BRIGHT_YELLOW}Premium Edition ${BRIGHT_GREEN}${BRIGHT_GREEN}          ║"
+echo -e "║ ${BRIGHT_YELLOW}🚀 Scode Auto Setup ${BRIGHT_GREEN}                                  ║"
 echo -e "║ ${BRIGHT_MAGENTA}🔧 Phiên bản 2.0 - ${BRIGHT_BLUE}© 2023 Đặng Gia ${BRIGHT_GREEN}              ║"
 echo -e "╚══════════════════════════════════════════════════════════╝${NC}"
 echo ""
@@ -183,4 +183,4 @@ echo -e "${BRIGHT_MAGENTA}💡 Mẹo: ${BRIGHT_WHITE}Bạn có thể chạy tr�
 echo -e "${BRIGHT_YELLOW}   python /sdcard/Download/sn01.py"
 echo ""
 echo -e "${BRIGHT_GREEN}✅ Mọi quá trình đã hoàn tất thành công!"
-echo -e "${BRIGHT_CYAN}💖 Cảm ơn bạn đã sử dụng Scode Premium Auto Setup!${NC}"
+echo -e "${BRIGHT_CYAN}💖 Cảm ơn bạn đã sử dụng Scode Auto Setup!${NC}"
