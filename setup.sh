@@ -27,7 +27,7 @@ BG_CYAN='\033[46m'
 NC='\033[0m' # No Color
 
 # Hàm hiển thị banner Scode đồng bộ
-show_banner() {
+show_start_banner() {
     clear
     echo -e "${BRIGHT_BLUE}╔══════════════════════════════════════════════════════════╗"
     echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_BLUE} ║"
@@ -38,7 +38,29 @@ show_banner() {
     echo -e "║${BRIGHT_CYAN} ╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_BLUE} ║"
     echo -e "╠══════════════════════════════════════════════════════════╣"
     echo -e "║ ${BRIGHT_YELLOW}🚀 Scode Auto Setup ${BRIGHT_BLUE}                                  ║"
-    echo -e "║ ${BRIGHT_MAGENTA}🔧 Developed by Đặng Gia - ${BRIGHT_GREEN}Version 2.0 ${BRIGHT_BLUE}         ║"
+    echo -e "║ ${BRIGHT_MAGENTA}🔧 Developed by Đặng Gia ${BRIGHT_BLUE}                            ║"
+    echo -e "║ ${BRIGHT_GREEN}📌 Version 2.0 ${BRIGHT_BLUE}                                       ║"
+    echo -e "╚══════════════════════════════════════════════════════════╝${NC}"
+    echo ""
+}
+
+# Hàm hiển thị banner hoàn thành
+show_success_banner() {
+    clear
+    echo -e "${BRIGHT_GREEN}╔══════════════════════════════════════════════════════════╗"
+    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_GREEN} ║"
+    echo -e "║${BRIGHT_CYAN} ██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_YELLOW}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_GREEN} ║"
+    echo -e "║${BRIGHT_CYAN} ███████╗${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_GREEN} ║"
+    echo -e "║${BRIGHT_CYAN} ╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_GREEN} ║"
+    echo -e "║${BRIGHT_CYAN} ███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_YELLOW}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_GREEN} ║"
+    echo -e "║${BRIGHT_CYAN} ╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_GREEN} ║"
+    echo -e "╠══════════════════════════════════════════════════════════╣"
+    echo -e "║ ${BRIGHT_WHITE}${BG_GREEN}         🎉 CÀI ĐẶT THÀNH CÔNG! ${NC}${BRIGHT_GREEN}                   ║"
+    echo -e "║ ${BRIGHT_WHITE}${BG_GREEN}         🚀 SẴN SÀNG SỬ DỤNG! ${NC}${BRIGHT_GREEN}                     ║"
+    echo -e "╠══════════════════════════════════════════════════════════╣"
+    echo -e "║ ${BRIGHT_YELLOW}🚀 Scode Auto Setup ${BRIGHT_GREEN}                                  ║"
+    echo -e "║ ${BRIGHT_MAGENTA}🔧 Developed by Đặng Gia ${BRIGHT_GREEN}                            ║"
+    echo -e "║ ${BRIGHT_CYAN}📌 Version 2.0 ${BRIGHT_GREEN}                                       ║"
     echo -e "╚══════════════════════════════════════════════════════════╝${NC}"
     echo ""
 }
@@ -99,8 +121,8 @@ check_error() {
     fi
 }
 
-# Hiển thị banner
-show_banner
+# Hiển thị banner đầu
+show_start_banner
 
 # Cập nhật và nâng cấp Termux
 show_progress 0.03 "Khởi động cập nhật hệ thống" "🔄"
@@ -154,22 +176,10 @@ check_error "Tải ld5.py thất bại"
 echo -e "${BRIGHT_GREEN}[✓] Tải ld5.py hoàn tất!${NC}"
 echo ""
 
-# Màn hình hoàn thành (sử dụng cùng banner với phần đầu)
-show_banner
-echo -e "${BRIGHT_GREEN}╔══════════════════════════════════════════════════════════╗"
-echo -e "║ ${BRIGHT_WHITE}${BG_GREEN}         🎉 CÀI ĐẶT THÀNH CÔNG - SẴN SÀNG SỬ DỤNG! ${NC}${BRIGHT_GREEN}       ║"
-echo -e "╠══════════════════════════════════════════════════════════╣"
-echo -e "║ ${BRIGHT_CYAN}███████╗${BRIGHT_GREEN} ██████╗${BRIGHT_YELLOW} ██████╗${BRIGHT_BLUE} ██████╗${BRIGHT_MAGENTA} ███████╗${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_CYAN}██╔════╝${BRIGHT_GREEN}██╔════╝${BRIGHT_YELLOW}██╔═══██╗${BRIGHT_BLUE}██╔══██╗${BRIGHT_MAGENTA}██╔════╝${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_CYAN}███████╗${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}█████╗  ${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_CYAN}╚════██║${BRIGHT_GREEN}██║     ${BRIGHT_YELLOW}██║   ██║${BRIGHT_BLUE}██║  ██║${BRIGHT_MAGENTA}██╔══╝  ${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_CYAN}███████║${BRIGHT_GREEN}╚██████╗${BRIGHT_YELLOW}╚██████╔╝${BRIGHT_BLUE}██████╔╝${BRIGHT_MAGENTA}███████╗${BRIGHT_GREEN} ║"
-echo -e "║ ${BRIGHT_CYAN}╚══════╝${BRIGHT_GREEN} ╚═════╝ ${BRIGHT_YELLOW}╚═════╝ ${BRIGHT_BLUE}╚═════╝ ${BRIGHT_MAGENTA}╚══════╝${BRIGHT_GREEN} ║"
-echo -e "╠══════════════════════════════════════════════════════════╣"
-echo -e "║ ${BRIGHT_YELLOW}🚀 Scode Auto Setup ${BRIGHT_GREEN}                                  ║"
-echo -e "║ ${BRIGHT_MAGENTA}🔧 Phiên bản 2.0 - ${BRIGHT_BLUE}© 2023 Đặng Gia ${BRIGHT_GREEN}              ║"
-echo -e "╚══════════════════════════════════════════════════════════╝${NC}"
-echo ""
+# Hiển thị banner hoàn thành (khác với banner đầu)
+show_success_banner
+
+# Hiển thị hướng dẫn sử dụng
 echo -e "${BRIGHT_BLUE}╔══════════════════════════════════════════════════════════╗"
 echo -e "║ ${BRIGHT_WHITE}${BG_BLUE}                    🚀 LỆNH KHỞI CHẠY                    ${NC}${BRIGHT_BLUE}║"
 echo -e "╠══════════════════════════════════════════════════════════╣"
