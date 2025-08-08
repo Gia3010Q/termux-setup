@@ -60,7 +60,7 @@ echo ""
 # Cài đặt các thư viện Python
 show_loading "Khởi động cài đặt thư viện Python"
 show_status "Cài đặt thư viện Python"
-pip install requests Flask colorama aiohttp psutil crypto pycryptodome prettytable loguru rich pytz tqdm pyjwt pystyle cloudscraper > /dev/null 2>&1
+pip install requests Flask colorama aiohttp crypto pycryptodome prettytable loguru rich pytz tqdm pyjwt pystyle cloudscraper > /dev/null 2>&1
 echo ""
 
 # Tải file về /sdcard/Download
